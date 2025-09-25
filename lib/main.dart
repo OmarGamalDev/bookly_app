@@ -13,6 +13,7 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         scaffoldBackgroundColor: kPrimaryColor,
         brightness: Brightness.dark,
