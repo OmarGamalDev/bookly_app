@@ -14,7 +14,6 @@ class FeaturedListViewItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(17),
             image: DecorationImage(
-              fit: BoxFit.cover,
               onError: (exception, stackTrace) => const Icon(Icons.error),
               image: CachedNetworkImageProvider(
                 'https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg',
@@ -28,13 +27,13 @@ class FeaturedListViewItem extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.black.withAlpha(100),
+                  color: Colors.black.withAlpha(70),
                 ),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
                     Icons.play_arrow,
-                    size: 40,
+                    size: 30,
                     color: Colors.white,
                   ),
                 ),
