@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,18 +6,13 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      
-      children: [
-        Text('Welcome to the Home Page'),
-        ElevatedButton(
-          onPressed: () {
-            // Navigate to another page
-          },
-          child: Text('Go to Details'),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          CustomAppBar(),
+        ],
+      ),
     );
   }
 }

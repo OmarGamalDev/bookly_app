@@ -1,5 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:bookly_app/core/constants/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -35,7 +36,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(
-          "assets/images/Logo.png",
+          AssetImages.logo,
           //  color: AppColors.blackColor
         ),
         SlidingText(slidingAnimation: slidingAnimation),
