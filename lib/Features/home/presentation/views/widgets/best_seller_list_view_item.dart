@@ -24,7 +24,7 @@ class BestSellerListViewItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20),
         child: SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.12,
+          height: MediaQuery.sizeOf(context).height * 0.15,
           child: Row(
             children: [
               AspectRatio(
