@@ -7,6 +7,11 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontWeight: FontWeight.w400,
   );
+  static final TextStyle titleMedium = TextStyle(
+    fontSize: 20,
+    color: AppColors.whiteColor,
+    fontWeight: FontWeight.w600,
+  );
   // static final TextStyle boldBlackText = TextStyle(
   //   fontSize: 26,
   //   fontWeight: FontWeight.bold,

@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+class FeaturedListViewItem extends StatelessWidget {
+  const FeaturedListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,21 @@ class CustomListViewItem extends StatelessWidget {
           ),
           child: Align(
             alignment: Alignment.bottomRight,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.play_arrow,
-                size: 40,
-                color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 6, bottom: 6),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.black.withAlpha(100),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.play_arrow,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),
