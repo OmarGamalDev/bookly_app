@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_ratting.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/constants/app_colors.dart';
 import 'package:bookly_app/core/constants/app_styles.dart';
@@ -43,60 +44,48 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 30),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.5,
-                    child: Text(
-                      'The Jungle Book dfdfdfdfdfdfdfdfdfdf',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: Styles.textStyle20.copyWith(
-                        color: AppColors.whiteColor,
-                        fontFamily: kGtSectraFine,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    'by Rudyard Kipling',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Styles.textStyle14.copyWith(
-                      color: Colors.white.withValues(alpha: 0.7),
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "19.99 €",
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.5,
+                      child: Text(
+                        'The Jungle Book dfdfdfdfdfdfdfdfdfdf',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle20.copyWith(
                           color: AppColors.whiteColor,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: kGtSectraFine,
                         ),
                       ),
-                      const SizedBox(width: 45),
-                      Icon(Icons.star, color: Colors.amber, size: 20),
-                      const SizedBox(width: 5),
-                      Text(
-                        '4.5',
-                        style: Styles.textStyle16.copyWith(
-                          color: AppColors.whiteColor,
-                        ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      'by Rudyard Kipling',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Styles.textStyle14.copyWith(
+                        color: Colors.white.withValues(alpha: 0.7),
                       ),
-                      const SizedBox(width: 10),
-                      Text(
-                        '(2390)',
-                        style: Styles.textStyle14.copyWith(
-                          color: Colors.white.withValues(alpha: 0.7),
+                    ),
+                    const SizedBox(height: 6),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "19.99 €",
+                          style: Styles.textStyle20.copyWith(
+                            color: AppColors.whiteColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        const SizedBox(width: 45),
+                        BookRating(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
