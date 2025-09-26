@@ -1,0 +1,39 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+
+class CustomListViewItem extends StatelessWidget {
+  const CustomListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 15.0),
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(17),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              onError: (exception, stackTrace) => const Icon(Icons.error),
+              image: CachedNetworkImageProvider(
+                'https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg',
+              ),
+            ),
+          ),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.play_arrow,
+                size: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
