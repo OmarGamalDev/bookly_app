@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:bookly_app/core/constants/app_colors.dart';
 import 'package:bookly_app/core/constants/asset_images.dart';
 import 'package:flutter/material.dart';
@@ -14,21 +15,22 @@ class CustomDrawerWidget extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Image.asset(AssetImages.logo, height: 180, width: 100),
           ),
-          ExpansionTile(
-            leading: Icon(Icons.language),
-            title: Text("Language"),
+          const SizedBox(height: 20),
+          CustomExpansionTile(
+            icon: Icons.language,
+            title: "Language",
             children: [
               ListTile(title: Text("Arabic"), onTap: () {}),
               ListTile(title: Text("English"), onTap: () {}),
             ],
           ),
           const Divider(color: AppColors.whiteColor),
-          ExpansionTile(
-            leading: const Icon(Icons.brightness_4_outlined),
-            title: const Text("Theme"),
+          CustomExpansionTile(
+            icon: Icons.brightness_4_outlined,
+            title: "Theme",
             children: [
-              ListTile(title: const Text("Light"), onTap: () {}),
-              ListTile(title: const Text("Dark"), onTap: () {}),
+              ListTile(title: const Text("Light Mode"), onTap: () {}),
+              ListTile(title: const Text("Dark Mode"), onTap: () {}),
             ],
           ),
         ],

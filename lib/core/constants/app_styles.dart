@@ -1,4 +1,4 @@
-import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/constants/constants_key.dart';
 import 'package:bookly_app/core/constants/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
