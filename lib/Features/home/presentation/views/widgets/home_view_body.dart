@@ -6,7 +6,9 @@ import 'package:bookly_app/core/constants/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({super.key, required this.scaffoldKey});
+
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,11 @@ class HomeViewBody extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: const CustomAppBar(),
+                child: CustomAppBar(
+                  scaffoldKey: scaffoldKey,
+                ),
               ),
+
               Padding(
                 padding: const EdgeInsets.all(6.0),
                 child: const FeaturedBooksListView(),
@@ -28,9 +33,10 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  "Best Seller",
+                  "Newest Books",
                   style: Styles.textStyle18.copyWith(
                     color: AppColors.whiteColor,
+                    fontSize: 22,
                   ),
                 ),
               ),

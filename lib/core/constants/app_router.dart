@@ -1,6 +1,7 @@
 import 'package:bookly_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/splash_view.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -14,7 +15,9 @@ static const kBookDetailsView="/BookDetailsView";
     ),
     GoRoute(
       path: kHomeView,
-      builder: (context, state) => HomeView(),
+      builder: (context, state) => HomeView(
+        scaffoldKey: GlobalKey<ScaffoldState>(),
+      ),
     ),
     GoRoute(
       path: kBookDetailsView,

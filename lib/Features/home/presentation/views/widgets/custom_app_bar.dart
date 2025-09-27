@@ -4,14 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key,required this.scaffoldKey});
+
+final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        IconButton(
+          onPressed: () {
+             scaffoldKey.currentState!.openDrawer();
+          },
+          icon: SvgPicture.asset(
+            AssetImages.barsStaggered,
+            colorFilter: const ColorFilter.mode(
+              AppColors.whiteColor,
+              BlendMode.srcIn,
+            ),
+            height: 30,
+            width: 30,
+          ),
+        ),
         Image.asset(AssetImages.logo, height: 120, width: 120),
-        const Spacer(),
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
