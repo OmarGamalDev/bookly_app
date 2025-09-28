@@ -5,11 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
-
+  const BookRating({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         SvgPicture.asset(
           AssetImages.star,
@@ -17,7 +21,15 @@ class BookRating extends StatelessWidget {
           height: 20,
           width: 20,
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 6),
+        Text(
+          '4.5',
+          style: Styles.textStyle16.copyWith(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(width: 9),
         Text(
           '(2390)',
           style: Styles.textStyle14.copyWith(

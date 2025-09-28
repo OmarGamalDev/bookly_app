@@ -20,7 +20,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: Icon(
-              Icons.shopping_cart_outlined,
+              Icons.remove_red_eye,
               color: AppColors.whiteColor,
               size: 35,
             ),
