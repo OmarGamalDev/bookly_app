@@ -1,7 +1,9 @@
 import 'package:bookly_app/core/constants/app_colors.dart';
+import 'package:bookly_app/core/constants/app_router.dart';
 import 'package:bookly_app/core/constants/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key,required this.scaffoldKey});
@@ -29,7 +31,9 @@ final GlobalKey<ScaffoldState> scaffoldKey;
         ),
         Image.asset(AssetImages.logo, height: 120, width: 120),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kSearchView);
+          },
           icon: SvgPicture.asset(
             AssetImages.search,
             colorFilter: const ColorFilter.mode(
