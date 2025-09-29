@@ -7,7 +7,7 @@ abstract class FeaturedBooksState {
 class FeaturedBooksInitial extends FeaturedBooksState {}
 class FeaturedBooksStateLoading extends FeaturedBooksState {}
 class FeaturedBooksStateSuccess extends FeaturedBooksState {
-  final List books;
+  final List<BookModel> books;
   const FeaturedBooksStateSuccess(this.books);
 }
 class FeaturedBooksStateFailure extends FeaturedBooksState {
