@@ -6,9 +6,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key,required this.scaffoldKey});
+  const CustomAppBar({super.key, required this.scaffoldKey});
 
-final GlobalKey<ScaffoldState> scaffoldKey;
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ final GlobalKey<ScaffoldState> scaffoldKey;
       children: [
         IconButton(
           onPressed: () {
-             scaffoldKey.currentState!.openDrawer();
+            scaffoldKey.currentState!.openDrawer();
           },
           icon: SvgPicture.asset(
             AssetImages.barsStaggered,

@@ -7,6 +7,8 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       itemCount: 10,
       itemBuilder: (context, index) {
         return BestSellerListViewItem();

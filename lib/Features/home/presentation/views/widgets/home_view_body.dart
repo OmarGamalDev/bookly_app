@@ -20,9 +20,7 @@ class HomeViewBody extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: CustomAppBar(
-                  scaffoldKey: scaffoldKey,
-                ),
+                child: CustomAppBar(scaffoldKey: scaffoldKey),
               ),
 
               Padding(
