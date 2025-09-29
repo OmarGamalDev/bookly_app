@@ -14,7 +14,8 @@ class FeaturedBestSellerListView extends StatelessWidget {
       },
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 10,
+        shrinkWrap: true,
+        itemCount: 40,
         itemBuilder: (context, index) {
           return BestSellerListViewItem();
         },
