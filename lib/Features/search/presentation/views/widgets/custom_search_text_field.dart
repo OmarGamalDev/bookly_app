@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/constants/app_colors.dart';
+import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomSearchTextField extends StatelessWidget {

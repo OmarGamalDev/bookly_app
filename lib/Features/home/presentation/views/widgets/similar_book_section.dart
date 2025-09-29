@@ -1,6 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/list_view_builder_images.dart';
-import 'package:bookly_app/core/constants/app_colors.dart';
-import 'package:bookly_app/core/constants/app_styles.dart';
+import 'package:bookly_app/core/utils/app_colors.dart';
+import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class SimilarBooksSection extends StatelessWidget {

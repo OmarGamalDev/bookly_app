@@ -1,6 +1,6 @@
-import 'package:bookly_app/core/constants/app_colors.dart';
-import 'package:bookly_app/core/constants/app_styles.dart';
-import 'package:bookly_app/core/constants/asset_images.dart';
+import 'package:bookly_app/core/utils/app_colors.dart';
+import 'package:bookly_app/core/utils/app_styles.dart';
+import 'package:bookly_app/core/utils/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
