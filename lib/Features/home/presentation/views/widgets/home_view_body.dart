@@ -11,6 +11,7 @@ class HomeViewBody extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
+
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
@@ -22,7 +23,6 @@ class HomeViewBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: CustomAppBar(scaffoldKey: scaffoldKey),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(6.0),
                 child: const FeaturedBooksListView(),

@@ -1,0 +1,20 @@
+import 'dart:math';
+
+import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+part 'featured_books_state.dart';
+
+class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
+  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+  final HomeRepo homeRepo;
+  Future<void> fetchFeaturedBooks() async {
+    emit(FeaturedBooksStateLoading());
+    var result = await homeRepo.fetchNewestBooksImages();
+    result.fold((failure) {
+      emit(FeaturedBooksStateFailure(failure.errMessage));
+    }, (books) {
+      emit(FeaturedBooksStateSuccess(books));
+    });
+  }
+}
