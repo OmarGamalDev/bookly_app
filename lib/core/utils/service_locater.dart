@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
 
-void setUp() {
+void setUpServiceLocator() {
   getIt.registerSingleton<ApiService>(ApiService(dio: Dio()));
   getIt.registerSingleton<HomeRepoImpl>(
     HomeRepoImpl(apiService: getIt<ApiService>()),
