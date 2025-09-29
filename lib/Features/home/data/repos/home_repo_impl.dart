@@ -8,18 +8,25 @@ class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
   HomeRepoImpl({required this.apiService});
   @override
-  Either<Failure, List<BookModel>> fetchFeaturedBooks() {
-    apiService.get(
-      endPoint: "volumes?q=programming",
-    );
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooksImages() async {
+    try {
+      var data = await apiService.get(
+        endPoint:
+            "volumes?Filtering=free-ebooks&Sorting=newest&q=subject:Programming",
+      );
+      List<BookModel> books = [];
+      for (var item in data["items"]) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      return left(ServerFailure());
+    }
   }
 
   @override
-  Either<Failure, List<BookModel>> fetchNewestBooks() {
-    apiService.get(
-      endPoint: "volumes?q=programming",
-    );
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooksDetails() async {
+    var data = await apiService.get(endPoint: "volumes?q=programming");
     throw UnimplementedError();
   }
 }
