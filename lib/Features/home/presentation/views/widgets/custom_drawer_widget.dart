@@ -1,6 +1,7 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_expansion_tile.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/asset_images.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
@@ -20,8 +21,18 @@ class CustomDrawerWidget extends StatelessWidget {
             icon: Icons.language,
             title: "Language",
             children: [
-              ListTile(title: Text("Arabic"), onTap: () {}),
-              ListTile(title: Text("English"), onTap: () {}),
+              ListTile(
+                title: Text("Arabic"),
+                onTap: () {
+                  context.setLocale(const Locale('ar'));
+                },
+              ),
+              ListTile(
+                title: Text("English"),
+                onTap: () {
+                  context.setLocale(const Locale('en'));
+                },
+              ),
             ],
           ),
           const Divider(color: AppColors.whiteColor),

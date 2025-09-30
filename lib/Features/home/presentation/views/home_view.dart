@@ -1,5 +1,6 @@
 import 'package:bookly_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_drawer_widget.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
@@ -17,8 +18,15 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
+        ),
+        BlocProvider(
+          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
+        ),
+      ],
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(100),
