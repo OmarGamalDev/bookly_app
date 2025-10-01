@@ -32,6 +32,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
                   LocaleKeys.newestBooks.tr(),
+                  locale: context.locale,
                   style: Styles.textStyle20.copyWith(
                     color: AppColors.whiteColor,
                     fontSize: 22,

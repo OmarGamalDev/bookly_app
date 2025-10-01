@@ -17,13 +17,14 @@ class CodegenLoader extends AssetLoader{
   static const Map<String,dynamic> _ar = {
   "readFreeBooks": "أقرأ كتب مجانية",
   "search": "بحث",
+  "searchResult": "نتائج البحث",
   "newestBooks": "أحدث الكتب",
   "free": "مجاني",
   "language": "اللغة",
   "theme": "الوضع",
   "lightMode": "الوضع النهاري",
   "darkMode": "الوضع الليلي",
-  "youCanAlsoLike": "يمكنك أيضا أن تعجبك",
+  "youCanAlsoLike": "يمكن أيضا أن يعجبك",
   "notAvailable": "غير متاح",
   "download": "تحميل",
   "arabicLanguage": "اللغة العربية",
@@ -32,6 +33,7 @@ class CodegenLoader extends AssetLoader{
 static const Map<String,dynamic> _en = {
   "readFreeBooks": "Read Free Books",
   "search": "Search",
+  "searchResult": "Search Result",
   "newestBooks": "Newest Books",
   "free": "Free",
   "language": "Language",

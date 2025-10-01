@@ -2,6 +2,8 @@ import 'package:bookly_app/Features/search/presentation/views/widgets/custom_sea
 import 'package:bookly_app/Features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
+import 'package:bookly_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -21,7 +23,7 @@ class SearchViewBody extends StatelessWidget {
                 CustomSearchTextField(),
                 const SizedBox(height: 30),
                 Text(
-                  "Search Results",
+                  LocaleKeys.searchResult.tr(),
                   style: Styles.textStyle18.copyWith(
                     color: AppColors.whiteColor,
                     fontSize: 22,

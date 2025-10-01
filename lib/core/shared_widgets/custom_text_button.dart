@@ -12,7 +12,7 @@ class CustomTextButton extends StatelessWidget {
   final Color backgroundColor;
   final String text;
   final VoidCallback onPressed;
-  final BorderRadius? borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final TextStyle textStyle;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomTextButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         minimumSize: const Size(double.infinity, 60),
         shape: RoundedRectangleBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(16),
+          borderRadius: borderRadius ?? BorderRadiusDirectional.all(Radius.circular(16)),
         ),
       ),
       onPressed: onPressed,

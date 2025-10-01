@@ -1,6 +1,8 @@
+import 'package:bookly_app/core/shared_widgets/custom_text_button.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
-import 'package:bookly_app/core/shared_widgets/custom_text_button.dart';
+import 'package:bookly_app/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class BookAction extends StatelessWidget {
@@ -15,35 +17,31 @@ class BookAction extends StatelessWidget {
           Expanded(
             child: CustomTextButton(
               backgroundColor: AppColors.whiteColor,
-              text: 'Free Book',
+              text: LocaleKeys.free.tr(),
               textStyle: Styles.textStyle20.copyWith(
                 color: AppColors.blackColor,
                 fontWeight: FontWeight.bold,
               ),
               onPressed: () {},
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(16),
-                bottomLeft: Radius.circular(16),
+              borderRadius: const BorderRadiusDirectional.only(
+                topStart: Radius.circular(16),
+                bottomStart: Radius.circular(16),
               ),
             ),
           ),
           Expanded(
             child: CustomTextButton(
               backgroundColor: AppColors.redColor,
-              text: 'preview',
+              text: LocaleKeys.download.tr(),
               textStyle: Styles.textStyle20.copyWith(
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),
               onPressed: () {},
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16),
-                topLeft: Radius.circular(0),
-                bottomLeft: Radius.circular(0),
+              borderRadius: const BorderRadiusDirectional.only(
+                topEnd: Radius.circular(16),
+                bottomEnd: Radius.circular(16),
               ),
             ),
           ),

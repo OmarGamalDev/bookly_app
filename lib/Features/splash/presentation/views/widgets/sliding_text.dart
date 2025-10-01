@@ -19,6 +19,7 @@ class SlidingText extends StatelessWidget {
             position: slidingAnimation,
             child: Text(
               LocaleKeys.readFreeBooks.tr(),
+              locale: context.locale,
               textAlign: TextAlign.center,
               style: Styles.logoText,
             ),

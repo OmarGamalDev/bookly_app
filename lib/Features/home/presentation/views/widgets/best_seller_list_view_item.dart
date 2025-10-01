@@ -67,6 +67,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   children: [
                     Text(
                       LocaleKeys.free.tr(),
+                      locale: context.locale,
                       style: Styles.textStyle20.copyWith(
                         color: AppColors.whiteColor,
                         fontWeight: FontWeight.bold,
