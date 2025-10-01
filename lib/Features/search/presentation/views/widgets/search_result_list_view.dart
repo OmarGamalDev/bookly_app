@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,10 @@ class SearchResultListView extends StatelessWidget {
       shrinkWrap: true,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return BestSellerListViewItem();
+        return BestSellerListViewItem(
+          bookModel: BookModel(
+          ),
+        );
       },
     );
   }

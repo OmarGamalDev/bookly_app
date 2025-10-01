@@ -1,45 +1,47 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_ratting.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/core/utils/constants_key.dart';
+import 'package:bookly_app/generated/locale_keys.g.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key,required });
+  const BestSellerListViewItem({super.key, required this.bookModel});
 
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.138,
-        child: Row(
-          children: [
-            AspectRatio(
-              aspectRatio: 3 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                    fit: BoxFit.contain,
-                    onError: (exception, stackTrace) => const Icon(Icons.error),
-                    image: CachedNetworkImageProvider(
-                      'https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg',
-                    ),
+    return SizedBox(
+      height: 140,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  onError: (exception, stackTrace) => const Icon(Icons.error),
+                  image: CachedNetworkImageProvider(
+                    bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
                   ),
                 ),
               ),
             ),
-            const SizedBox(width: 30),
-            Column(
+          ),
+          const SizedBox(width: 30),
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width * 0.5,
                   child: Text(
-                    'The Jungle Book dfdfdfdfdfdfdfdfdfdf',
+                    bookModel.volumeInfo?.title ?? 'No Title',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle20.copyWith(
@@ -50,7 +52,9 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  'by Rudyard Kipling',
+                  (bookModel.volumeInfo?.authors?.isNotEmpty ?? false)
+                      ? bookModel.volumeInfo!.authors!.join(", ")
+                      : "Unknown Author",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Styles.textStyle14.copyWith(
@@ -62,20 +66,24 @@ class BestSellerListViewItem extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "19.99 €",
+                      LocaleKeys.free.tr(),
                       style: Styles.textStyle20.copyWith(
                         color: AppColors.whiteColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(width: 60),
-                    BookRating(),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.3),
+                    BookRating(
+                      count: bookModel.volumeInfo?.ratingsCount ?? 0,
+                      rating: (bookModel.volumeInfo?.averageRating ?? 0.0)
+                          .toInt(),
+                    ),
                   ],
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

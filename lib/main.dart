@@ -14,7 +14,7 @@ void main() async {
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
-      // startLocale: Locale('ar'),
+      startLocale: Locale('en'),
       child: const BooklyApp(),
     ),
   );
@@ -26,9 +26,9 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      localizationsDelegates: EasyLocalization.of(context)!.delegates,
-      supportedLocales: EasyLocalization.of(context)!.supportedLocales,
-      locale: EasyLocalization.of(context)!.locale,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

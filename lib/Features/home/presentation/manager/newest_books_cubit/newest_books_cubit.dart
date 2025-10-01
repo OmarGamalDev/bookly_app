@@ -10,7 +10,7 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
   HomeRepo homeRepo;
   Future<void> fetchNewestBooks() async {
     emit(NewestBooksLoading());
-    var result = await homeRepo.fetchNewestBooksImages();
+    var result = await homeRepo.fetchNewestBooksDetails();
     result.fold((failure) {
       emit(NewestBooksFailure(failure.errMessage));
     }, (books) {
