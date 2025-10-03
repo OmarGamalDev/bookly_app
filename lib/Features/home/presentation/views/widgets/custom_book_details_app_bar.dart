@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({super.key});
@@ -13,7 +14,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              GoRouter.of(context).pop();
             },
             icon: Icon(Icons.close, color: AppColors.whiteColor, size: 35),
           ),

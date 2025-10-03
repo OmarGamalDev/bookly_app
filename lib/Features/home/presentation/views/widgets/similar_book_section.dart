@@ -14,7 +14,7 @@ class SimilarBooksSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 8.0),
+          padding: const EdgeInsets.only(left: 24.0, right: 24.0),
           child: Text(
             LocaleKeys.youCanAlsoLike.tr(),
             locale: context.locale,
