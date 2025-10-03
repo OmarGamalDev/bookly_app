@@ -7,16 +7,18 @@ import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomBookImage(),
+        CustomBookImage(
+          imageUrl: book.volumeInfo?.imageLinks?.thumbnail??"",
+        ),
         const SizedBox(height: 20),
         Text(
-          'The Jungle Book',
+          book.volumeInfo?.title ?? "",
           style: Styles.textStyle30.copyWith(color: AppColors.whiteColor),
         ),
         Padding(
@@ -24,7 +26,7 @@ class BookDetailsSection extends StatelessWidget {
           child: Opacity(
             opacity: 0.7,
             child: Text(
-              'Rudyard Kipling',
+              (book.volumeInfo?.authors?.join(", ")) ?? "",
               style: Styles.textStyle18.copyWith(
                 color: AppColors.whiteColor,
                 fontStyle: FontStyle.italic,
@@ -34,9 +36,10 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 18),
-        BookRating(mainAxisAlignment: MainAxisAlignment.center,
-        count: BookModel().volumeInfo?.ratingsCount ?? 0,
-        rating: (BookModel().volumeInfo?.averageRating ?? 0.0).toInt(),
+        BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+          count: book.volumeInfo?.ratingsCount ?? 0,
+          rating: (book.volumeInfo?.averageRating ?? 0.0).toInt(),
         ),
         const SizedBox(height: 37),
         const BookAction(),

@@ -17,7 +17,10 @@ class ListViewBuilderImages extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const CustomBookImage(padding: EdgeInsets.all(6));
+                return CustomBookImage(
+                  padding: EdgeInsets.all(6),
+                  imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail ?? '',
+                );
               },
               itemCount: 10,
             ),
