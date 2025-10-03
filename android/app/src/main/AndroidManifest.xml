@@ -10,7 +10,7 @@
         android:label="Bookly"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android: useCleartextTraffic="true"
+        android:useCleartextTraffic="true"
         >
         <activity
             android:name=".MainActivity"
