@@ -13,32 +13,34 @@ class FeaturedNewestBooksListView extends StatelessWidget {
   final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
+    return BlocBuilder<NewestBooksCubit, NewestBooksState>(
+      builder: (context, state) {
+        if (state is NewestBooksSuccess) {
+          return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: state.books.length,
+            itemBuilder: (context, index) {
+              final book = state.books[index];
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(
+                      context,
+                    ).push(AppRouter.kBookDetailsView, extra: book);
+                  },
+                  child: BestSellerListViewItem(bookModel: book),
+                ),
+              );
+            },
+          );
+        } else if (state is NewestBooksFailure) {
+          return CustomErrorWidget(errMessage: state.errorMessage);
+        } else {
+          return NewestBooksShimmer();
+        }
       },
-      child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
-        builder: (context, state) {
-          if (state is NewestBooksSuccess) {
-            return ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: state.books.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: BestSellerListViewItem(bookModel: state.books[index]),
-                );
-              },
-            );
-          } else if (state is NewestBooksFailure) {
-            return CustomErrorWidget(errMessage: state.errorMessage);
-          } else {
-            return NewestBooksShimmer();
-          }
-        },
-      ),
     );
   }
 }
-

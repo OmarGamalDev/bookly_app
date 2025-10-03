@@ -17,6 +17,7 @@ class CustomBookImage extends StatelessWidget {
             borderRadius: BorderRadius.circular(17),
             image: DecorationImage(
               onError: (exception, stackTrace) => const Icon(Icons.error),
+              fit: BoxFit.fill,
               image: CachedNetworkImageProvider(
                  imageUrl,
               ),

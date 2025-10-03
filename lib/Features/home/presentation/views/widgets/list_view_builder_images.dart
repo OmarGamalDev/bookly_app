@@ -22,7 +22,7 @@ class ListViewBuilderImages extends StatelessWidget {
                   imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail ?? '',
                 );
               },
-              itemCount: 10,
+              itemCount:state.books.length,
             ),
           );
         }else if (state is FetchSimilarBooksFailure) {

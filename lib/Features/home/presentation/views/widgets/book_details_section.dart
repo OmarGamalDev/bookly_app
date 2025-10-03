@@ -13,25 +13,31 @@ class BookDetailsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomBookImage(
-          imageUrl: book.volumeInfo?.imageLinks?.thumbnail??"",
-        ),
+        CustomBookImage(imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? ''),
         const SizedBox(height: 20),
         Text(
-          book.volumeInfo?.title ?? "",
+          book.volumeInfo?.title ?? 'No Title',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
           style: Styles.textStyle30.copyWith(color: AppColors.whiteColor),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 5.0),
+          padding: const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
           child: Opacity(
             opacity: 0.7,
             child: Text(
-              (book.volumeInfo?.authors?.join(", ")) ?? "",
+              (book.volumeInfo?.authors?.isNotEmpty ?? false)
+                  ? book.volumeInfo!.authors!.join(", ")
+                  : "Unknown Author",
               style: Styles.textStyle18.copyWith(
                 color: AppColors.whiteColor,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.w500,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
           ),
         ),
