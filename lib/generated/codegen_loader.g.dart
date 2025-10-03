@@ -28,6 +28,7 @@ class CodegenLoader extends AssetLoader{
   "youCanAlsoLike": "يمكن أيضا أن يعجبك",
   "notAvailable": "غير متاح",
   "download": "تحميل",
+  "loading": "جاري التحميل",
   "arabicLanguage": "اللغة العربية",
   "englishLanguage": "اللغة الإنجليزية"
 };
@@ -46,6 +47,7 @@ static const Map<String,dynamic> _en = {
   "youCanAlsoLike": "You can also like",
   "notAvailable": "Not Available",
   "download": "Download",
+  "loading": "Loading....",
   "arabicLanguage": "Arabic Language",
   "englishLanguage": "English Language"
 };

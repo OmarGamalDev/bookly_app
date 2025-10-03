@@ -16,6 +16,7 @@ abstract class  LocaleKeys {
   static const youCanAlsoLike = 'youCanAlsoLike';
   static const notAvailable = 'notAvailable';
   static const download = 'download';
+  static const loading = 'loading';
   static const arabicLanguage = 'arabicLanguage';
   static const englishLanguage = 'englishLanguage';
 

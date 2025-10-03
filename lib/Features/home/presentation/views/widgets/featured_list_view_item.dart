@@ -1,9 +1,17 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/utils/functions/launch_url.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({super.key, required this.imageUrl});
+  const FeaturedListViewItem({
+    super.key,
+    required this.imageUrl,
+    required this.bookModel,
+  });
   final String imageUrl;
+  final BookModel bookModel;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,7 +37,13 @@ class FeaturedListViewItem extends StatelessWidget {
                   color: Colors.black.withAlpha(70),
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Implement your logic for the play button press
+                    launchUrlBooks(
+                      context,
+                      bookModel.volumeInfo?.previewLink ?? '',
+                    );
+                  },
                   icon: const Icon(
                     Icons.play_arrow,
                     size: 30,

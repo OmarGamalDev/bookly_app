@@ -18,7 +18,9 @@ class BookDetailsViewBody extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
-                  child: CustomBookDetailsAppBar(),
+                  child: CustomBookDetailsAppBar(
+                    book: bookModel,
+                  ),
                 ),
                 BookDetailsSection(book: bookModel),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
