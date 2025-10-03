@@ -16,7 +16,10 @@ class BookDetailsViewBody extends StatelessWidget {
           child: SafeArea(
             child: Column(
               children: [
-                CustomBookDetailsAppBar(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: CustomBookDetailsAppBar(),
+                ),
                 BookDetailsSection(book: bookModel),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const SimilarBooksSection(),

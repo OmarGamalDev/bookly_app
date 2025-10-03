@@ -15,12 +15,15 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         CustomBookImage(imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? ''),
         const SizedBox(height: 20),
-        Text(
-          book.volumeInfo?.title ?? 'No Title',
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: Styles.textStyle30.copyWith(color: AppColors.whiteColor),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Text(
+            book.volumeInfo?.title ?? 'No Title',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: Styles.textStyle30.copyWith(color: AppColors.whiteColor),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10.0, left: 8.0, right: 8.0),
@@ -48,7 +51,9 @@ class BookDetailsSection extends StatelessWidget {
           rating: (book.volumeInfo?.averageRating ?? 0.0).toInt(),
         ),
         const SizedBox(height: 37),
-        const BookAction(),
+         BookAction(
+          bookModel: book,
+         ),
       ],
     );
   }

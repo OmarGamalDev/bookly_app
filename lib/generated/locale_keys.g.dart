@@ -7,6 +7,7 @@ abstract class  LocaleKeys {
   static const search = 'search';
   static const searchResult = 'searchResult';
   static const newestBooks = 'newestBooks';
+  static const preview = 'preview';
   static const free = 'free';
   static const language = 'language';
   static const theme = 'theme';
