@@ -3,6 +3,7 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/book_image_s
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:bookly_app/core/shared_widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,26 +16,28 @@ class FeaturedBooksListView extends StatelessWidget {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
         if (state is FeaturedBooksStateSuccess) {
-          return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.27,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: state.books.length,
-              itemBuilder: (context, index) => GestureDetector(
+          return CarouselSlider(
+            options: CarouselOptions(
+              height: MediaQuery.of(context).size.height * 0.30,
+              enlargeCenterPage: true,
+              viewportFraction: 0.5,
+              enlargeFactor: 0.25,
+              enableInfiniteScroll: true,
+              autoPlay: false,
+            ),
+            items: state.books.map((book) {
+              return GestureDetector(
                 onTap: () {
                   GoRouter.of(
                     context,
-                  ).push(AppRouter.kBookDetailsView, extra: state.books[index]);
+                  ).push(AppRouter.kBookDetailsView, extra: book);
                 },
                 child: FeaturedListViewItem(
-                  imageUrl:
-                      state.books[index].volumeInfo?.imageLinks?.thumbnail ??
-                      '',
-                  bookModel: state.books[index],
+                  imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+                  bookModel: book,
                 ),
-              ),
-            ),
+              );
+            }).toList(),
           );
         } else if (state is FeaturedBooksStateFailure) {
           return CustomErrorWidget(errMessage: state.errorMessage);
