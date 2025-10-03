@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_newest_books_list_view.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
@@ -46,7 +47,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-            child: FeaturedNewestBooksListView(),
+            child: FeaturedNewestBooksListView(
+              bookModel: BookModel(),
+            ),
           ),
         ),
       ],

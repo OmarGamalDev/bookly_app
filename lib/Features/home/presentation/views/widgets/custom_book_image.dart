@@ -8,9 +8,7 @@ class CustomBookImage extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding:
-          padding ??
-          EdgeInsets.symmetric(horizontal: width * 0.23, vertical: 20),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: width * 0.23, vertical: 20),
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(

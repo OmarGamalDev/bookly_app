@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/newest_books_shimmer.dart';
@@ -8,13 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class FeaturedNewestBooksListView extends StatelessWidget {
-  const FeaturedNewestBooksListView({super.key});
-
+  const FeaturedNewestBooksListView({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
       },
       child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
         builder: (context, state) {
