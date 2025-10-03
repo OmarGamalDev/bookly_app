@@ -14,5 +14,6 @@
   "download": "تحميل",
   "loading": "جاري التحميل",
   "arabicLanguage": "اللغة العربية",
-  "englishLanguage": "اللغة الإنجليزية"
+  "englishLanguage": "اللغة الإنجليزية",
+  "noResultsFound": "لم يتم العثور على نتائج"
 }

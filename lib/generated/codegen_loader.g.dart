@@ -30,7 +30,8 @@ class CodegenLoader extends AssetLoader{
   "download": "تحميل",
   "loading": "جاري التحميل",
   "arabicLanguage": "اللغة العربية",
-  "englishLanguage": "اللغة الإنجليزية"
+  "englishLanguage": "اللغة الإنجليزية",
+  "noResultsFound": "لم يتم العثور على نتائج"
 };
 static const Map<String,dynamic> _en = {
   "readFreeBooks": "Read Free Books",
@@ -49,7 +50,8 @@ static const Map<String,dynamic> _en = {
   "download": "Download",
   "loading": "Loading....",
   "arabicLanguage": "Arabic Language",
-  "englishLanguage": "English Language"
+  "englishLanguage": "English Language",
+  "noResultsFound": "No results found"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

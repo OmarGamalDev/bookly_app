@@ -27,7 +27,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   fit: BoxFit.fill,
                   onError: (exception, stackTrace) => const Icon(Icons.error),
                   image: CachedNetworkImageProvider(
-                    bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+                    bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                        'https://imgs.search.brave.com/KzG9vVcKb7UbgEv--6ejVw8za-60Ahe7lL5GhzMwqaA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzE2UERKMTJsaEwu/anBn',
                   ),
                 ),
               ),

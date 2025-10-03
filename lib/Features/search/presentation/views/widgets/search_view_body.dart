@@ -12,6 +12,7 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
@@ -23,7 +24,7 @@ class SearchViewBody extends StatelessWidget {
                 CustomSearchTextField(),
                 const SizedBox(height: 30),
                 Text(
-                  LocaleKeys.searchResult.tr(),
+                  "${LocaleKeys.searchResult.tr()} :",
                   style: Styles.textStyle18.copyWith(
                     color: AppColors.whiteColor,
                     fontSize: 22,

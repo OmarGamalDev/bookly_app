@@ -19,5 +19,6 @@ abstract class  LocaleKeys {
   static const loading = 'loading';
   static const arabicLanguage = 'arabicLanguage';
   static const englishLanguage = 'englishLanguage';
+  static const noResultsFound = 'noResultsFound';
 
 }
