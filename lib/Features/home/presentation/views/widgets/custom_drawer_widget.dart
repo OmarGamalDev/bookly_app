@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_expansion_tile.dart';
+import 'package:bookly_app/core/theme/theme_cubit.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/asset_images.dart';
 import 'package:bookly_app/generated/locale_keys.g.dart';
@@ -41,8 +42,12 @@ class CustomDrawerWidget extends StatelessWidget {
             icon: Icons.brightness_4_outlined,
             title: LocaleKeys.theme.tr(),
             children: [
-              ListTile(title: Text(LocaleKeys.lightMode.tr()), onTap: () {}),
-              ListTile(title: Text(LocaleKeys.darkMode.tr()), onTap: () {}),
+              ListTile(title: Text(LocaleKeys.lightMode.tr()), onTap: () {
+                ThemeCubit.get(context).selectTheme(ThemeModeState.light);
+              }),
+              ListTile(title: Text(LocaleKeys.darkMode.tr()), onTap: () {
+                ThemeCubit.get(context).selectTheme(ThemeModeState.dark);
+              }),
             ],
           ),
         ],
