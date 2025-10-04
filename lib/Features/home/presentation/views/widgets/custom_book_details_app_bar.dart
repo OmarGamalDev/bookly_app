@@ -1,5 +1,4 @@
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/functions/launch_url.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -18,17 +17,13 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
-            icon: Icon(Icons.close, color: AppColors.whiteColor, size: 35),
+            icon: Icon(Icons.close, size: 35),
           ),
           IconButton(
             onPressed: () {
               launchUrlBooks(context, book.volumeInfo?.previewLink ?? '');
             },
-            icon: Icon(
-              Icons.remove_red_eye,
-              color: AppColors.whiteColor,
-              size: 35,
-            ),
+            icon: Icon(Icons.remove_red_eye, size: 35),
           ),
         ],
       ),

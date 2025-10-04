@@ -1,5 +1,4 @@
 import 'package:bookly_app/Features/search/presentation/manager/search_cubit/search_cubit.dart';
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -12,11 +11,10 @@ class CustomSearchTextField extends StatelessWidget {
   final TextEditingController controller = TextEditingController();
   Widget build(BuildContext context) {
     return TextField(
-      style: Styles.textStyle20.copyWith(color: AppColors.whiteColor),
+      style: Styles.textStyle20,
       controller: controller,
       decoration: InputDecoration(
         hintText: LocaleKeys.search.tr(),
-        hintStyle: TextStyle(color: AppColors.whiteColor),
         filled: true,
         suffixIcon: IconButton(
           icon: Icon(Icons.search),
@@ -26,11 +24,11 @@ class CustomSearchTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(color: Colors.grey.shade300),
+          borderSide: BorderSide(),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
-          borderSide: BorderSide(color: Colors.grey.shade300),
+          borderSide: BorderSide(),
         ),
       ),
       onSubmitted: (value) {

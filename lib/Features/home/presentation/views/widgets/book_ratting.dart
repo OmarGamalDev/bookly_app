@@ -28,18 +28,10 @@ class BookRating extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           '$rating',
-          style: Styles.textStyle16.copyWith(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 12),
-        Text(
-          '($count)',
-          style: Styles.textStyle14.copyWith(
-            color: Colors.white.withValues(alpha: 0.7),
-          ),
-        ),
+        Text('($count)', style: Styles.textStyle14.copyWith()),
       ],
     );
   }

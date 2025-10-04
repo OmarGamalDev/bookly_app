@@ -1,27 +1,25 @@
-import 'package:bookly_app/core/theme/theme_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'theme_state.dart';
 
 enum ThemeModeState { light, dark, system }
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeInitial());
-  static ThemeCubit get(context) => BlocProvider.of(context);
-  
-  ThemeModeState currentTheme = ThemeModeState.system;
-  void selectTheme(ThemeModeState themeModeState) {
-    currentTheme = themeModeState;
-    emit(ThemeChanged());
-  }
+  ThemeCubit() : super(const ThemeInitial());
 
-  ThemeMode getTheme() {
-    switch (currentTheme) {
+  static ThemeCubit get(context) => BlocProvider.of(context);
+
+  void selectTheme(ThemeModeState themeModeState) {
+    switch (themeModeState) {
       case ThemeModeState.light:
-        return ThemeMode.light;
+        emit(const ThemeChanged(ThemeMode.light));
+        break;
       case ThemeModeState.dark:
-        return ThemeMode.dark;
+        emit(const ThemeChanged(ThemeMode.dark));
+        break;
       case ThemeModeState.system:
-        return ThemeMode.system;
+        emit(const ThemeChanged(ThemeMode.system));
+        break;
     }
   }
 }

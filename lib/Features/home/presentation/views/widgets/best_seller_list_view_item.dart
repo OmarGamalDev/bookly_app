@@ -1,6 +1,5 @@
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_ratting.dart';
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/core/utils/constants_key.dart';
 import 'package:bookly_app/generated/locale_keys.g.dart';
@@ -46,7 +45,6 @@ class BestSellerListViewItem extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle20.copyWith(
-                      color: AppColors.whiteColor,
                       fontFamily: kGtSectraFine,
                     ),
                   ),
@@ -58,9 +56,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       : "Unknown Author",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
+                  style: Styles.textStyle14.copyWith(),
                 ),
                 const SizedBox(height: 6),
                 Row(
@@ -70,7 +66,6 @@ class BestSellerListViewItem extends StatelessWidget {
                       LocaleKeys.free.tr(),
                       locale: context.locale,
                       style: Styles.textStyle20.copyWith(
-                        color: AppColors.whiteColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

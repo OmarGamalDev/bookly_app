@@ -6,7 +6,6 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/home_view_bo
 import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/asset_images.dart';
-import 'package:bookly_app/core/utils/constants_key.dart';
 import 'package:bookly_app/core/utils/service_locater.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,8 +37,12 @@ class HomeView extends StatelessWidget {
             child: AppBar(
               scrolledUnderElevation: 0,
               elevation: 0,
-              backgroundColor: kPrimaryColor,
-              title: Image.asset(AssetImages.logo, height: 150, width: 140),
+              title: Image.asset(
+                AssetImages.logo,
+                height: 150,
+                width: 140,
+                color: AppColors.dynamicTextColor(context),
+              ),
               centerTitle: true,
               actions: [
                 IconButton(
@@ -48,8 +51,8 @@ class HomeView extends StatelessWidget {
                   },
                   icon: SvgPicture.asset(
                     AssetImages.search,
-                    colorFilter: const ColorFilter.mode(
-                      AppColors.whiteColor,
+                    colorFilter: ColorFilter.mode(
+                      AppColors.dynamicTextColor(context),
                       BlendMode.srcIn,
                     ),
                     height: 30,
@@ -64,8 +67,8 @@ class HomeView extends StatelessWidget {
                   },
                   icon: SvgPicture.asset(
                     AssetImages.barsStaggered,
-                    colorFilter: const ColorFilter.mode(
-                      AppColors.whiteColor,
+                    colorFilter: ColorFilter.mode(
+                      AppColors.dynamicTextColor(context),
                       BlendMode.srcIn,
                     ),
                     height: 30,

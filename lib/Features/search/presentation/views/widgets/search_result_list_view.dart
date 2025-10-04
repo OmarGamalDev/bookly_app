@@ -3,7 +3,6 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/newest_books
 import 'package:bookly_app/Features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookly_app/Features/search/presentation/views/widgets/empty_search_result.dart';
 import 'package:bookly_app/core/shared_widgets/custom_error_widget.dart';
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/generated/locale_keys.g.dart';
@@ -31,9 +30,7 @@ class SearchResultListView extends StatelessWidget {
                 child: Text(
                   LocaleKeys.noResultsFound.tr(),
                   locale: context.locale,
-                  style: Styles.textStyle30.copyWith(
-                    color: AppColors.whiteColor,
-                  ),
+                  style: Styles.textStyle30.copyWith(),
                 ),
               ),
             );
