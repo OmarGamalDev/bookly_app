@@ -14,7 +14,7 @@ class BookDetailsSection extends StatelessWidget {
     return Column(
       children: [
         CustomBookImage(imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? ''),
-        const SizedBox(height: 20),
+        const SizedBox(height: 5),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
@@ -44,16 +44,14 @@ class BookDetailsSection extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 18),
+        const SizedBox(height: 12),
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
           count: book.volumeInfo?.ratingsCount ?? 0,
           rating: (book.volumeInfo?.averageRating ?? 0.0).toInt(),
         ),
-        const SizedBox(height: 37),
-         BookAction(
-          bookModel: book,
-         ),
+        const SizedBox(height: 26),
+        BookAction(bookModel: book),
       ],
     );
   }

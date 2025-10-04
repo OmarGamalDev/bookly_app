@@ -1,11 +1,12 @@
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/core/shared_widgets/custom_text_button.dart';
 import 'package:bookly_app/core/utils/app_colors.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
-import 'package:bookly_app/core/utils/functions/launch_url.dart';
 import 'package:bookly_app/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BookAction extends StatelessWidget {
   const BookAction({super.key, required this.bookModel});
@@ -41,11 +42,12 @@ class BookAction extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
               onPressed: () {
-                // Implement your logic for the preview button press
-                launchUrlBooks(
-                  context,
-                  bookModel.volumeInfo?.previewLink ?? '',
-                );
+                if ((bookModel.volumeInfo?.previewLink ?? '').isNotEmpty) {
+                  GoRouter.of(context).push(
+                    AppRouter.kBookPreviewView,
+                    extra: bookModel.volumeInfo!.previewLink!,
+                  );
+                }
               },
               borderRadius: const BorderRadiusDirectional.only(
                 topEnd: Radius.circular(16),

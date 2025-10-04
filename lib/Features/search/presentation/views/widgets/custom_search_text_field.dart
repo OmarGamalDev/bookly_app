@@ -28,6 +28,10 @@ class CustomSearchTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
           borderSide: BorderSide(color: Colors.grey.shade300),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+          borderSide: BorderSide(color: Colors.grey.shade300),
+        ),
       ),
       onSubmitted: (value) {
         context.read<SearchCubit>().fetchSearchResult(value);

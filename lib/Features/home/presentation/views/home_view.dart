@@ -21,17 +21,20 @@ class HomeView extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
+          create: (context) =>
+              FeaturedBooksCubit(getIt.get<HomeRepoImpl>())
+                ..fetchFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
       ],
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(100),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+            padding: const EdgeInsets.only(top: 20.0, left: 12, right: 12),
             child: AppBar(
               scrolledUnderElevation: 0,
               elevation: 0,

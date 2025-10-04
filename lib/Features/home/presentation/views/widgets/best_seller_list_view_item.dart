@@ -74,7 +74,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.3),
+                    SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
                     BookRating(
                       count: bookModel.volumeInfo?.ratingsCount ?? 0,
                       rating: (bookModel.volumeInfo?.averageRating ?? 0.0)

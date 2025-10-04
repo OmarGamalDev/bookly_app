@@ -16,7 +16,7 @@ class SimilarBooksSection extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 24.0, right: 24.0),
           child: Text(
-            LocaleKeys.youCanAlsoLike.tr(),
+            "${LocaleKeys.youCanAlsoLike.tr()} : ",
             locale: context.locale,
             style: Styles.textStyle20.copyWith(
               color: AppColors.whiteColor,
@@ -24,8 +24,9 @@ class SimilarBooksSection extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 13),
         const ListViewBuilderImages(),
+        const SizedBox(height: 40),
       ],
     );
   }

@@ -17,13 +17,11 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: CustomBookDetailsAppBar(
-                    book: bookModel,
-                  ),
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: CustomBookDetailsAppBar(book: bookModel),
                 ),
                 BookDetailsSection(book: bookModel),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.025),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.023),
                 const SimilarBooksSection(),
               ],
             ),
