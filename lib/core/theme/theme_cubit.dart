@@ -5,21 +5,26 @@ import 'theme_state.dart';
 enum ThemeModeState { light, dark, system }
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(const ThemeInitial());
+  ThemeCubit() : super(ThemeChanged(themeMode: ThemeMode.dark));
 
   static ThemeCubit get(context) => BlocProvider.of(context);
 
+  ThemeModeState currentTheme = ThemeModeState.dark; 
+
   void selectTheme(ThemeModeState themeModeState) {
-    switch (themeModeState) {
+    currentTheme = themeModeState;
+    ThemeMode theme;
+    switch (currentTheme) {
       case ThemeModeState.light:
-        emit(const ThemeChanged(ThemeMode.light));
+        theme = ThemeMode.light;
         break;
       case ThemeModeState.dark:
-        emit(const ThemeChanged(ThemeMode.dark));
+        theme = ThemeMode.dark;
         break;
       case ThemeModeState.system:
-        emit(const ThemeChanged(ThemeMode.system));
+        theme = ThemeMode.system;
         break;
     }
+    emit(ThemeChanged(themeMode: theme));
   }
 }

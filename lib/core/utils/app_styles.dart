@@ -1,11 +1,9 @@
 import 'package:bookly_app/core/utils/constants_key.dart';
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class Styles {
   static final TextStyle logoText = TextStyle(
     fontSize: 20,
-    color: AppColors.whiteColor,
     fontWeight: FontWeight.w400,
   );
   static const textStyle18 = TextStyle(

@@ -37,7 +37,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(
           AssetImages.logo,
-          //  color: AppColors.blackColor
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.white
+              : Colors.black,
         ),
         SlidingText(slidingAnimation: slidingAnimation),
       ],
