@@ -14,6 +14,28 @@ Bookly is a Flutter-based mobile application that allows users to discover, sear
 - **Responsive UI:** Built with shimmer effects for loading states, providing a smooth user experience while data is being fetched.
 - **Error Handling:** Graceful error handling with user-friendly messages for network issues or API failures.
 
+## Screenshots
+###  Dark Mode  
+<p align="center">  
+  <img src="assets/screenshots/first_shot_dark.png" alt="Splash and Home Feature" width="250"/>  
+  <img src="assets/screenshots/second_shot_dark.png" alt="boook Details Feature" width="250"/>  
+  <img src="assets/screenshots/third_shot_dark.png" alt="Search Feature" width="250"/>  
+  <img src="assets/screenshots/fourth_shot_dark.png" alt="Drawer Feature" width="250"/>  
+</p>  
+
+---
+<!-- ###  Light Mode  
+<p align="center">  
+  <img src="assets/screenshots/no_notes_yet_light.png" alt="No Notes Yet (Light)" width="250"/>  
+  <img src="assets/screenshots/note_add_success_light.png" alt="Note Added Successfully (Light)" width="250"/>  
+  <img src="assets/screenshots/note_add_failure_light.png" alt="Note Add Failed (Light)" width="250"/>  
+  <img src="assets/screenshots/list_of_notes_light.png" alt="Notes List (Light)" width="250"/>
+  <img src="assets/screenshots/search_note_light.png" alt="Search Note (Dark)" width="250"/>  
+  <img src="assets/screenshots/search_in_notes_light.png" alt="Search In Notes (Dark)" width="250"/>   
+  <img src="assets/screenshots/edit_note_light.png" alt="Edit Note (Light)" width="250"/>  
+  <img src="assets/screenshots/delete_note_light.png" alt="Delete Note (Light)" width="250"/>  
+</p>   -->
+
 ##  Tech Stack & Architecture
 
 This project follows the principles of Clean Architecture, organized by feature, to ensure scalability and maintainability.
