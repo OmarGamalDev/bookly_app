@@ -17,24 +17,21 @@ Bookly is a Flutter-based mobile application that allows users to discover, sear
 ## Screenshots
 ###  Dark Mode  
 <p align="center">  
-  <img src="assets/screenshots/first_shot_dark.png" alt="Splash and Home Feature" width="250"/>  
-  <img src="assets/screenshots/second_shot_dark.png" alt="boook Details Feature" width="250"/>  
-  <img src="assets/screenshots/third_shot_dark.png" alt="Search Feature" width="250"/>  
-  <img src="assets/screenshots/fourth_shot_dark.png" alt="Drawer Feature" width="250"/>  
+  <img src="assets/screenshots/first_shot_dark.png" alt="Splash and Home Feature" width="950"/>  
+  <img src="assets/screenshots/second_shot_dark.png" alt="boook Details Feature" width="950"/>  
+  <img src="assets/screenshots/show_books_dark.png" alt="boook Details Feature" width="950"/>  
+  <img src="assets/screenshots/third_shot_dark.png" alt="Search Feature" width="950"/>  
+  <img src="assets/screenshots/fourth_shot_dark.png" alt="Drawer Feature" width="700"/>  
 </p>  
 
 ---
-<!-- ###  Light Mode  
+###  Light Mode  
 <p align="center">  
-  <img src="assets/screenshots/no_notes_yet_light.png" alt="No Notes Yet (Light)" width="250"/>  
-  <img src="assets/screenshots/note_add_success_light.png" alt="Note Added Successfully (Light)" width="250"/>  
-  <img src="assets/screenshots/note_add_failure_light.png" alt="Note Add Failed (Light)" width="250"/>  
-  <img src="assets/screenshots/list_of_notes_light.png" alt="Notes List (Light)" width="250"/>
-  <img src="assets/screenshots/search_note_light.png" alt="Search Note (Dark)" width="250"/>  
-  <img src="assets/screenshots/search_in_notes_light.png" alt="Search In Notes (Dark)" width="250"/>   
-  <img src="assets/screenshots/edit_note_light.png" alt="Edit Note (Light)" width="250"/>  
-  <img src="assets/screenshots/delete_note_light.png" alt="Delete Note (Light)" width="250"/>  
-</p>   -->
+  <img src="assets/screenshots/first_shot_light.png" alt="No Notes Yet (Light)" width="950"/>  
+  <img src="assets/screenshots/second_shot_light.png" alt="Note Add Failed (Light)" width="950"/>  
+  <img src="assets/screenshots/third_shot_light.png" alt="Notes List (Light)" width="950"/>
+  <img src="assets/screenshots/fourth_shot_light.png" alt="Search Note (Dark)" width="700"/>  
+</p>  
 
 ##  Tech Stack & Architecture
 
